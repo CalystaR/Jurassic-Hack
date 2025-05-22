@@ -1,0 +1,52 @@
+<!-- Page 4 – Labo ADN (version renforcée) -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Labo ADN</title>
+  <style>
+    body {
+      background-color: #1a1a1a;
+      color: #0f0;
+      font-family: monospace;
+      padding: 2em;
+    }
+    .start-button {
+      background-color: #0f0;
+      color: #000;
+      border: none;
+      padding: 1em;
+      font-size: 1.2em;
+      cursor: pointer;
+    }
+    
+    .fit-picture{
+      width : 75%;
+    }
+  </style>
+</head>
+<body>
+  <h1>Zone 4 — Labo ADN</h1>
+  <p>Analyse des séquences en cours...</p>
+  <button onclick="runDNASequence()">Analyser l'ADN</button>
+  <br><br>
+  <img src="../images/labo dino.png" alt="Labo ADN Jurassic Park" width="500">
+
+  <script>
+    const noise = ["/fake1.html", "/wrong_turn.php", "/dino_fail.js"];
+
+    function obfuscatedJoin(a, b, c) {
+      return a.split('').reverse().join('') + b.slice(1) + c.replace('1', 'l');
+    }
+
+    function runDNASequence() {
+      let part1 = "elartnec"; //esrevni
+      let part2 = "_surv";   
+      let part3 = "ve1lance.htm1"; // replace one letter
+
+      const finalPath = obfuscatedJoin(part1, part2, part3);
+      window.location.href = "/" + finalPath;
+    }
+  </script>
+</body>
+</html>
+

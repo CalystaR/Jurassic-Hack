@@ -1,0 +1,47 @@
+<!-- Page 7 – Chemin des Herbivores (obfusqué) -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chemin des Herbivores</title>
+  <style>
+    img:hover { filter: brightness(150%); }
+    body {
+      background-color: #1a1a1a;
+      color: #0f0;
+      font-family: monospace;
+      padding: 2em;
+    }
+    .fit-picture {
+      width: 75%;
+    }
+  </style>
+</head>
+<body>
+  <h1>Zone 7</h1>
+
+  <div id="herbivore-gallery"></div>
+
+  <script>
+    const imgSrc = "../images/herbivore sous manif.png";
+    const totalImgs = 30;
+    const secretIndex = 16;
+    const redirectTo = atob("cHJvZl9hcmNoaXZlLmh0bWw=");
+
+    for (let i = 0; i < totalImgs; i++) {
+      const img = document.createElement("img");
+      img.src = imgSrc;
+      img.alt = "Clique ici";
+      img.className = "fit-picture";
+      if (i === secretIndex) {
+        const a = document.createElement("a");
+        a.href = redirectTo;
+        a.appendChild(img);
+        document.getElementById("herbivore-gallery").appendChild(a);
+      } else {
+        document.getElementById("herbivore-gallery").appendChild(img);
+      }
+    }
+  </script>
+
+</body>
+</html>
