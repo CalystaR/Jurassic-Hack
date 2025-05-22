@@ -1,0 +1,43 @@
+<!-- Page 6 – Enclos du T-Rex -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Enclos du T-Rex</title>
+  <script>
+    const secret = "rex_escape";
+    function checkPassword() {
+      let input = document.getElementById('password').value;
+      if (input === secret) {
+        window.location.href = "/herbivore_path.html";
+      } else {
+        alert("Presque ! Tu y es presque, petit raptor…");
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #1a1a1a;
+      color: #0f0;
+      font-family: monospace;
+      padding: 2em;
+    }
+    .start-button {
+      background-color: #0f0;
+      color: #000;
+      border: none;
+      padding: 1em;
+      font-size: 1.2em;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Zone 6</h1>
+  <input type="text" id="password">
+  <button onclick="checkPassword()">Entrer</button>
+  <img
+    class="fit-picture"
+    src="trex bikini.png"
+    alt="Jurassic Park entrée" />
+</body>
+</html>
