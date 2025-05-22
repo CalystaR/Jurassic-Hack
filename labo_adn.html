@@ -18,6 +18,10 @@
       font-size: 1.2em;
       cursor: pointer;
     }
+    
+    .fit-picture{
+      width : 75%;
+    }
   </style>
 </head>
 <body>
@@ -25,10 +29,9 @@
   <p>Analyse des séquences en cours...</p>
   <button onclick="runDNASequence()">Analyser l'ADN</button>
   <br><br>
-  <img src="labo_dino.png" alt="Labo ADN Jurassic Park" width="500">
+  <img src="labo dino.png" alt="Labo ADN Jurassic Park" width="500">
 
   <script>
-    // Faux indices
     const noise = ["/fake1.html", "/wrong_turn.php", "/dino_fail.js"];
 
     function obfuscatedJoin(a, b, c) {
@@ -36,9 +39,9 @@
     }
 
     function runDNASequence() {
-      let part1 = "lartnec"; // reversed("central")
-      let part2 = "_surv";   // slice(1) => "surv"
-      let part3 = "ve1lance.htm1"; // replace 1 with "l"
+      let part1 = "elartnec"; //esrevni
+      let part2 = "_surv";   
+      let part3 = "ve1lance.htm1"; // replace one letter
 
       const finalPath = obfuscatedJoin(part1, part2, part3);
       window.location.href = "/" + finalPath;
