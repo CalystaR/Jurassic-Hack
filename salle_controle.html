@@ -1,16 +1,8 @@
-<!-- Page 9 – Salle de Contrôle -->
+<!-- Page 9 – Salle de Contrôle (obfusquée) -->
 <!DOCTYPE html>
 <html>
 <head>
   <title>Salle de Contrôle</title>
-  <script>
-    function escape() {
-      window.location.href = "jurassic_escape.html";
-    }
-    function noescape() {
-      window.location.href = "jurassic_escape.html";
-    }
-  </script>
   <style>
     body {
       background-color: #1a1a1a;
@@ -25,21 +17,41 @@
       padding: 1em;
       font-size: 1.2em;
       cursor: pointer;
+      margin: 4px;
     }
-    
-    .fit-picture{
-      width : 75%;
+    .fit-picture {
+      width: 75%;
+      display: block;
+      margin: 2em auto;
     }
   </style>
 </head>
 <body>
   <h1>Zone 9</h1>
-  <button class="start-button" onclick="noescape()">S'échapper</button><button class="start-button" onclick="noescape()">S'échapper</button><button class="start-button" onclick="noescape()">S'échapper</button><button class="start-button" onclick="noescape()">S'échapper</button><button class="start-button" onclick="noescape()">S'échapper</button><button class="start-button" onclick="noescape()">S'échapper</button><button class="start-button" onclick="noescape()">S'échapper</button><button class="start-button" onclick="noescape()">S'échapper</button><button class="start-button" onclick="noescape()">S'échapper</button><button class="start-button" onclick="noescape()">S'échapper</button><button class="start-button" onclick="noescape()">S'échapper</button><button class="start-button" onclick="noescape()">S'échapper</button><button class="start-button" onclick="noescape()">S'échapper</button><button class="start-button" onclick="noescape()">S'échapper</button><button class="start-button" onclick="noescape()">S'échapper</button><button class="start-button" onclick="noescape()">S'échapper</button><button class="start-button" onclick="noescape()">S'échapper</button><button class="start-button" onclick="noescape()">S'échapper</button><button class="start-button" onclick="noescape()">S'échapper</button><button class="start-button" onclick="noescape()">S'échapper</button><button class="start-button" onclick="noescape()">S'échapper</button><button class="start-button" onclick="noescape()">S'échapper</button><button class="start-button" onclick="noescape()">S'échapper</button><button class="start-button" onclick="escape()">S'échapper</button><button class="start-button" onclick="noescape()">S'échapper</button><button class="start-button" onclick="noescape()">S'échapper</button><button class="start-button" onclick="noescape()">S'échapper</button><button class="start-button" onclick="noescape()">S'échapper</button><button class="start-button" onclick="noescape()">S'échapper</button><button class="start-button" onclick="noescape()">S'échapper</button><button class="start-button" onclick="noescape()">S'échapper</button><button class="start-button" onclick="noescape()">S'échapper</button><button class="start-button" onclick="noescape()">S'échapper</button><button class="start-button" onclick="noescape()">S'échapper</button><button class="start-button" onclick="noescape()">S'échapper</button><button class="start-button" onclick="noescape()">S'échapper</button><button class="start-button" onclick="noescape()">S'échapper</button><button class="start-button" onclick="noescape()">S'échapper</button><button class="start-button" onclick="noescape()">S'échapper</button><button class="start-button" onclick="noescape()">S'échapper</button><button class="start-button" onclick="noescape()">S'échapper</button><button class="start-button" onclick="noescape()">S'échapper</button><button class="start-button" onclick="noescape()">S'échapper</button><button class="start-button" onclick="noescape()">S'échapper</button><button class="start-button" onclick="noescape()">S'échapper</button>
-<img
-    class="fit-picture"
-    src="salle de controle.png"
-    alt="Jurassic Park entrée" />
+  <div id="button-container"></div>
+  <img class="fit-picture" src="salle de controle.png" alt="Jurassic Park entrée" />
+
+  <script>
+    const nbButtons = 45;
+    const escapeIndex = 23;
+    const redir = atob("anVyYXNzaWNfZXNjYXBlLmh0bWw="); 
+
+    const container = document.getElementById("button-container");
+
+    for (let i = 0; i < nbButtons; i++) {
+      const btn = document.createElement("button");
+      btn.textContent = "S'échapper";
+      btn.className = "start-button";
+      btn.onclick = () => {
+        if (i === escapeIndex) {
+          window.location.href = redir;
+        } else {
+          // Optionnel : petit leurre
+          alert("Accès refusé !");
+        }
+      };
+      container.appendChild(btn);
+    }
+  </script>
 </body>
 </html>
-
-
